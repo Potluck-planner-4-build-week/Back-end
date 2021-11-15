@@ -14,7 +14,7 @@ exports.up = async (knex) => {
            .notNullable()
            .references('role_id')
            .inTable('roles')
-          //  .onUpdate('RESTRICT')
+          //  .onUpdate('RESTRICT') ERROR: foreign_key constraint - why?
           //  .onDelete('RESTRICT')
     })
 }

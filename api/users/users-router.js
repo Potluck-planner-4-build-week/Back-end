@@ -3,16 +3,34 @@ const router = require("express").Router();
 // model
 const Users = require('./users-model');
 
-router.get('/', async (req, res) => {
-    await Users.get()
+//CRUD - create(POST), read(GET), update(PUT), delete(DELETE)
+
+router.get('/', async (req, res, next) => {
+    await Users.find()
       .then(result => {
           res.json(result)
       })
-    // res.json(await Users.get())
+    // res.json(await Users.find())
 })
 
-// router.post('/', async (req, res) => {
-//     res.status(201).json(await insertUser(req.body))
-// })      
+router.get('/:id', async (req, res, next) => {
+    await Users.findById(req.params.id)
+      .then(result => {
+          res.json(result)
+      })
+    // res.json(await Users.findBy(req.params.id))
+})
+
+router.post('/', (req, res, next) => {
+    res.json('post fires')
+})
+
+router.put('/:id', (req, res, next) => {
+    res.json('put fires')
+})
+
+// router.get('/:id', (req, res, next) => {
+//     res.json('delete fires')
+// })
 
 module.exports = router;
