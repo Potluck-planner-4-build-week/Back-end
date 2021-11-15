@@ -3,13 +3,16 @@ const router = require("express").Router();
 // model
 const Users = require('./users-model');
 
-
 router.get('/', async (req, res) => {
-    res.json(await getAllUsers())
+    await Users.get()
+      .then(result => {
+          res.json(result)
+      })
+    // res.json(await Users.get())
 })
 
-router.post('/', async (req, res) => {
-    res.status(201).json(await insertUser(req.body))
-})      
+// router.post('/', async (req, res) => {
+//     res.status(201).json(await insertUser(req.body))
+// })      
 
 module.exports = router;

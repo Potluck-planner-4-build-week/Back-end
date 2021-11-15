@@ -14,8 +14,8 @@ exports.up = async (knex) => {
            .notNullable()
            .references('role_id')
            .inTable('roles')
-           .onUpdate('RESTRICT')
-           .onDelete('RESTRICT')
+          //  .onUpdate('RESTRICT')
+          //  .onDelete('RESTRICT')
     })
 }
 
