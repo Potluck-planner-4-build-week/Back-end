@@ -10,7 +10,6 @@ router.get('/', async (req, res, next) => {
       .then(result => {
           res.json(result)
       })
-    // res.json(await Users.find())
 })
 
 router.get('/:id', async (req, res, next) => {
