@@ -25,17 +25,17 @@ exports.up = async (knex) => {
       events.string('time', 128).notNullable()
       events.string('event_description', 256)
       events.integer('attendees')
-      .unsigned()
-      .notNullable()
-      .references('user_id')
-      .inTable('users')
-          //  .onUpdate('RESTRICT')
-          //  .onDelete('RESTRICT')
+      // .unsigned()
+      // .notNullable()
+      // .references('user_id')
+      // .inTable('users')
+      //  .onUpdate('RESTRICT')
+      //  .onDelete('RESTRICT')
     })
-    .createTable('foods', meals => {
-      meals.increments('food_id')
-      meals.string('food_name', 128).notNullable()
-      meals.string('food_description', 256)
+    .createTable('foods', foods => {
+      foods.increments('food_id')
+      foods.string('food_name', 128).notNullable()
+      foods.string('food_description', 256)
     })
 }
 
