@@ -41,8 +41,8 @@ exports.up = async (knex) => {
 
 exports.down = async (knex) => {
   await knex.schema
-    .dropTableIfExists('users')
-    .dropTableIfExists('roles')
     .dropTableIfExists('events')
+    .dropTableIfExists('users')
     .dropTableIfExists('foods')
+    .dropTableIfExists('roles')
 }
