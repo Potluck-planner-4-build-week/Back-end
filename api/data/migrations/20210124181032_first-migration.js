@@ -14,7 +14,7 @@ exports.up = async (knex) => {
       users.string('username', 64).notNullable().unique()
       users.string('password', 64).notNullable()
       users.string('email', 128).notNullable()
-      users.string('contribution', 128).notNullable()
+      users.string('contribution', 128)
       users.integer('role_id')
            .unsigned()
            .notNullable()
